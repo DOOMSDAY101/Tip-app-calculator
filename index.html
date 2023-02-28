@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Sulaiman Ifeoluwa Daniel">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+
+</head>
+<body>
+<html>
+  <main>
+    <section class="container">
+
+      <div class="box">
+        <div class="begin">
+          <div class="bill">
+            <p>Bill</p>
+            <input type="text" id="amount" value="0.00" maxlength="14" oninput="bill()" onchange="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+            <p id="text"></p>
+          </div>
+          <!--Select tip section-->
+          <div class="select-tip">
+            <p>Select Tip %</p>
+            <input type="button" value="5%" id="btn" onclick="tipPer(5)">
+            <input type="button" value="10%" id="btn" onclick="tipPer(10)">
+            <input type="button" value="15%" id="btn" onclick="tipPer(15)">
+            <input type="button" value="20%" id="btn"  onclick="tipPer(20)">
+            <input type="button" value="50%" id="btn" onclick="tipPer(50)">
+            <input type="number" id="btn" placeholder="Custom"
+            oninput="tipPer(this.value)" min="0" max="100" class="btn1">
+            <p id="text2"></p>
+          </div>
+          <!-- Number of people section-->
+          <div class="no_people">
+            <p>Number of People</p>
+            <input type="number" name="num_of_people" id="num" min="0" max="100" oninput="noOfPeople()" value="1" >
+            <p id="text3"></p>
+          </div>
+
+        </div>
+        <!--For the responsive effect -->
+        <div class="end">
+          <!--Calculation box-->
+          <div class="calculate">
+          <!--For the first Tip amount per person-->
+            <div class="tip-person">
+              <div class="person-1">
+                <p>Tip Amount</p>
+                <span>/ person</span>
+              </div>
+              <div class="amount">
+                <p id="amount-1"></p>
+              </div>
+            </div>
+            <!--For the first Tip total per person-->
+            <div class="tip-person">
+              <div class="person-2">
+                <p>Total</p>
+                <span>/ person</span>
+              </div>
+              <div class="total">
+                <p id="total-1"></p>
+              </div>
+            </div>
+            <button type="reset" id="btnR" onclick="reset()">RESET</button>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+  </main>
+  <!--Attributions-->
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/DOOMSDAY101">Sulaiman Ifeoluwa</a>.
+  </div>
+</html>
+<script src="main.js"></script>
+</body>
+
+
+  
+
